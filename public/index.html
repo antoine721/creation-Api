@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DJ FORUM - Communauté des DJs</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1 class="logo">
+                    <span class="logo-icon">🎧</span>
+                    <span>DJ FORUM</span>
+                </h1>
+                <div id="auth-section" class="auth-section">
+                    <button type="button" id="login-btn" class="btn btn-primary">
+                        CONNEXION
+                    </button>
+                    <button type="button" id="register-btn" class="btn btn-secondary">
+                        INSCRIPTION
+                    </button>
+                </div>
+                <div id="user-section" class="user-section hidden">
+                    <div class="user-badge">
+                        <span class="user-icon">👤</span>
+                        <span id="username-display" class="username"></span>
+                    </div>
+                    <button id="logout-btn" class="btn btn-danger">
+                        DÉCONNEXION
+                    </button>
+                </div>
+            </header>
+
+            <div id="auth-modal" class="modal hidden">
+                <div class="modal-backdrop"></div>
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 id="modal-title" class="modal-title">CONNEXION</h2>
+                    <form id="auth-form">
+                        <div class="input-group">
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Email"
+                                required
+                            />
+                        </div>
+                        <div class="input-group">
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Mot de passe"
+                                required
+                            />
+                        </div>
+                        <div class="input-group hidden" id="username-group">
+                            <input
+                                type="text"
+                                id="username"
+                                placeholder="Nom de DJ / Pseudo"
+                            />
+                        </div>
+                        <div class="input-group hidden" id="bio-group">
+                            <input
+                                type="text"
+                                id="bio"
+                                placeholder="Bio / Style musical"
+                            />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            VALIDER
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <main class="main-content">
+                <div class="post-creator hidden">
+                    <div class="creator-header">
+                        <h3>Nouveau topic</h3>
+                    </div>
+                    <textarea
+                        id="post-content"
+                        placeholder="Partage tes mixes, tes découvertes, pose tes questions..."
+                        maxlength="500"
+                    ></textarea>
+                    <div class="post-creator-footer">
+                        <div class="char-counter">
+                            <span id="char-count">500</span>
+                            <span class="char-label">caractères</span>
+                        </div>
+                        <button id="post-btn" class="btn btn-primary">
+                            PUBLIER
+                        </button>
+                    </div>
+                </div>
+
+                <div class="feed-header">
+                    <h2>Discussions</h2>
+                </div>
+
+                <div id="posts-feed" class="posts-feed">
+                </div>
+            </main>
+        </div>
+
+        <script src="/js/app.js"></script>
+    </body>
+</html>
